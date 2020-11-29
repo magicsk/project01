@@ -1,5 +1,16 @@
 {
     "cSpell.words": [
         "rmdriver"
-    ]
+    ],
+    "files.associations": {
+        "*.h": "c",
+        "bit": "c",
+        "chrono": "c",
+        "random": "c",
+        "limits": "c",
+        "streambuf": "c",
+        "array": "c",
+        "system_error": "c",
+        "typeinfo": "c"
+    }
 }

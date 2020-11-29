@@ -7,7 +7,7 @@
 
 
         {
-            "name": "debug with gdb (no build)",
+            "name": "debug and build with gdb",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -23,7 +23,7 @@
                 "ignoreFailures": true
             }],
             "preLaunchTask": "gcc debug build active file - with GTK",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "miDebuggerPath": "/usr/bin/gdb",
         }
     ]
 }

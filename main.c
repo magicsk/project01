@@ -1,13 +1,21 @@
 // writtern by Rastislav Brna
 // Licence is available on https://github.com/magicsk/project01
 // IDE: Visual Studio Code
-// Compiler: gcc  args:-lm
+// Compiler: gcc  args:-lm -I./include
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-int main(){
+#include <readFile.h>
+#include <sum.h>
+#include <laps.h>
+#include <under.h>
+#include <changes.h>
 
-    system("clr || clear");
+int mainMenu() {
+    system("clear || cls");
     printf("[s]List of all values\n");
     printf("[d]List of values by lastname\n");
     printf("[l]Best lap\n");
@@ -23,57 +31,70 @@ int main(){
     printf("[x]Exit\n");
 
     char option = getchar();
+    getchar();
 
-    switch (option){
-        case 's':
-            sum();
-            break;
-        
-        case 'd':
-            driver();
-            break;
-        
-        case 'l':
-            lap();
-            break;
-        
-        case 'g':
-            gender();
-            break;
-        
-        case 'b':
-            brand();
-            break;
-        
-        case 'y':
-            year();
-            break;
-        
-        case 'a':
-            average();
-            break;
-        
-        case 'u':
-            under();
-            break;
-        
-        case 'c':
-            change();
-            break;
-        
-        case 'n':
-            newdriver();
-            break;
-        
-        case 'r':
-            rmdriver();
-            break;
+    switch (option) {
+    case 's':
+        sum();
+        break;
 
-        default:
-            getchar();
-            main();
-            break;
+    case 'd':
+        driver();
+        break;
+
+    case 'l':
+        lap();
+        break;
+
+    case 'g':
+        gender();
+        break;
+
+    case 'b':
+        brand();
+        break;
+
+    case 'y':
+        year();
+        break;
+
+    case 'a':
+        average();
+        break;
+
+    case 'u':
+        under();
+        break;
+
+    case 'c':
+        change();
+        break;
+
+    case 'n':
+        newdriver();
+        break;
+
+    case 'r':
+        rmdriver();
+        break;
+
+    case 'x':
+        system("clear || cls");
+        printf("Exiting...\n");
+        exit(0);
+        break;
+
+    default:
+        mainMenu();
+        break;
     }
+
+    return 0;
+}
+
+int main() {
+
+    mainMenu();
 
     return 0;
 }

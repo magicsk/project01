@@ -6,7 +6,6 @@
         "command": "/usr/bin/gcc",
         "args": [
             "-g",
-
             "-pthread",
             "-I/usr/include/gtk-3.0",
             "-I/usr/include/at-spi2-atk/2.0",
@@ -32,6 +31,8 @@
             "-I/usr/include/uuid",
             "-I/usr/include/glib-2.0",
             "-I/usr/lib/glib-2.0/include",
+            "-I${workspaceFolder}",
+            "-I${workspaceFolder}/include",
 
             "${file}",
 
@@ -48,7 +49,9 @@
             "-lglib-2.0",
 
             "-o",
-            "${fileDirname}/${fileBasenameNoExtension}"
+            "${fileDirname}/${fileBasenameNoExtension}",
+
+            "-Wimplicit-function-declaration"
         ],
         "options": {
             "cwd": "/usr/bin"
